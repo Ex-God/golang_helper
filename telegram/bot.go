@@ -27,7 +27,7 @@ func StartBot(botToken string) {
 func AnswerBot(botUrl string, update Update) {
 	// fmt.Printf("%+v", update)
 	if checkAdmin(update, os.Getenv("GH_ADMIN_ID")) {
-		if(update.Message.Text == "/start") {
+		if update.Message.Text == "/start" {
 			message := NewMessage(update.Message.From.Id, "Ready to search")
 			SendMessage(botUrl, message)
 			return
