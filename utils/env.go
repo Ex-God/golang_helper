@@ -12,11 +12,9 @@ func SetEnv() {
 	if err != nil { 		
 		log.Fatal(err)
 	}
-
 	sdata := string(data)
 	line := 0
 	temp := strings.Split(sdata, "\n")
-
 	for _, s := range temp {
 		sline := strings.Split(s, "=")
 		os.Setenv(sline[0], sline[1])
